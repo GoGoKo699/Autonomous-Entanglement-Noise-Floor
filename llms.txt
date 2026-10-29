@@ -1,0 +1,67 @@
+# Autonomous Entanglement Noise Floor
+
+This repository studies the stationary fidelity and operational mixing limits
+of fixed Markovian entanglement stabilization with local-sum jump operators.
+The complete scientific account is organized by topic under science/.
+
+Canonical entrypoints:
+- README.md: physical question, sharp qubit noise law, scientific reading
+  routes, assumptions, reproduction command and purpose/contact.
+- science/model.md: authoritative generator, fidelity, strength and mixing
+  conventions; exact statements R1--R4 and their domains.
+- science/rigidity.md: dominant-eigenvector control, explicit jump-centering
+  gauge, inherited spectral balance and maximally entangled transpose identity,
+  quadratic outgoing variance, arbitrary-H block control and adjoint bound.
+- science/noise_floor.md: independent dephasing converse, fixed bounded
+  local-noise variance corollary, and matching qubit asymptotic exponent.
+- science/mixing.md: all-input half-trace-distance convention, orthogonal
+  product witness, observable-speed proof and degenerate endpoints.
+- science/attaining_reservoir.md: inherited squeezed-pair family, jump norms,
+  pure-state population evolution, exact noisy state, uniqueness/convergence,
+  exact family optimization and transport to any Bell target.
+- science/interpretation.md: stationary repair-flux mechanism, coherent
+  control, physical budget normalization, architecture changes, experimental
+  motivation and remaining quantitative refinements.
+- references/RELATED_WORK.md: source-level attribution and model comparisons.
+- references/references.bib: primary bibliographic metadata.
+- verification/README.md: actual finite checks, commands and their limits.
+- verification/verify_reservoir.py: reproducible verification entrypoint.
+
+Reader routes:
+- To understand the physical result, read model.md, noise_floor.md and
+  interpretation.md; use the exact reservoir as a worked example.
+- To inspect the universal proof, read model.md and rigidity.md, then the
+  noise-floor or mixing consequence. Use the full proof and source attribution.
+- To inspect attainability, read attaining_reservoir.md and the verification
+  guide; distinguish the globally optimal exponent from a family coefficient.
+- To reproduce calculations, follow verification/README.md. Distinguish a
+  command actually executed from committed historical outputs.
+
+Essential distinctions:
+- J=A tensor I+I tensor B is a condition on effective jumps; microscopic local
+  bath coupling does not automatically imply it after elimination.
+- H is unrestricted but time independent. After centering the jumps, the
+  proof bounds the corresponding block of the gauge-adjusted H_c; it does
+  not necessarily bound that block of the original supplied H separately.
+- K is the declared sum of squared jump operator norms. Gamma counts only
+  engineering; the independent dephaser contributes kappa to total K.
+- D[J](rho)=J rho J-dagger - {J-dagger J,rho}/2. With this convention,
+  kappa D[Z_A] damps opposite-Z coherences at rate 2 kappa.
+- epsilon is Bell/full-maximal-target infidelity, not stationary impurity.
+- R1 and R2 apply to complete equal local factors in any finite d>=2.
+- R3's traceless-unitary dephasing version requires even d; its explicit
+  sharp attaining example and R4 optimize two-qubit Bell stabilization.
+- The target-variance corollary for other noise is a lower bound. Matching
+  performance for every such operator is not claimed.
+- The optimized squeezed-family coefficient sqrt(3) is not established as
+  the global optimum. The global result is the square-root order.
+- The mixing accuracy 1/4 is half trace distance to the actual stationary
+  state, uniformly over inputs. It is not target infidelity epsilon.
+- No universal dissipative-gap claim follows by taking a reciprocal mixing
+  time; normality and detailed balance are not assumed.
+- Retained auxiliary systems, subspace Bell targets and adaptive/switching
+  dynamics are distinct architectures, with known examples in prior work.
+- Spectral balance, the transpose identity and the reservoir family are
+  inherited. Read RELATED_WORK.md before making originality claims.
+- Finite verification supports explicit algebra and instances; universal
+  statements are supported by the written arguments and cited ingredients.
