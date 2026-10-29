@@ -111,8 +111,8 @@ For $`u\ne v`$, the population calculation below proves uniqueness and convergen
 Let
 
 ```math
-p_d=\operatorname{Tr}(P_d\rho),
-\qquad p_e=\operatorname{Tr}(P_e\rho),
+p_d=\mathrm{Tr}(P_d\rho),
+\qquad p_e=\mathrm{Tr}(P_e\rho),
 \qquad O=\rho_{01,01}+\rho_{10,10}.
 ```
 

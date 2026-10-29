@@ -24,6 +24,12 @@ Canonical entrypoints:
   motivation and remaining quantitative refinements.
 - references/RELATED_WORK.md: source-level attribution and model comparisons.
 - references/references.bib: primary bibliographic metadata.
+- learning/RIVAS_HUELGA_BRIDGE.md: the single educational anchor,
+  Rivas--Huelga, Open Quantum Systems: An Introduction (2012), using
+  arXiv:1104.5242v2 section numbering; notation and assumptions translated
+  into the stationary-flow proof and the exact two-qubit example.
+- learning/MILESTONES.md: exactly 30 common, project-defined understanding
+  milestones, ordered from foundations to the complete scientific narrative.
 - verification/README.md: actual finite checks, commands and their limits.
 - verification/verify_reservoir.py: reproducible verification entrypoint.
 
@@ -36,6 +42,9 @@ Reader routes:
   guide; distinguish the globally optimal exponent from a family coefficient.
 - To reproduce calculations, follow verification/README.md. Distinguish a
   command actually executed from committed historical outputs.
+- To learn the project, use learning/MILESTONES.md with the Rivas--Huelga
+  bridge. The map is independent of any reader's progress; distinguish
+  textbook foundations, inherited research ingredients and local derivations.
 
 Essential distinctions:
 - J=A tensor I+I tensor B is a condition on effective jumps; microscopic local

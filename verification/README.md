@@ -38,7 +38,7 @@ Reference numbers are compared with relative tolerance $`5\times10^{-10}`$ and a
 The basis is $`(|00\rangle,|01\rangle,|10\rangle,|11\rangle)`$. Operator vectors stack columns, so
 
 ```math
-\operatorname{vec}(AXB)=(B^T\otimes A)\operatorname{vec}(X).
+\mathrm{vec}(AXB)=(B^T\otimes A)\mathrm{vec}(X).
 ```
 
 The generator matrix is constructed as
@@ -52,7 +52,7 @@ J_\mu^*\otimes J_\mu
 \right].
 ```
 
-A separate direct matrix implementation evaluates $`-i[H,X]+\sum_\mu\mathcal D[J_\mu](X)`$ on all 16 matrix units and compares it with $`G\operatorname{vec}(X)`$. This check uses complex jumps obtained by a local phase rotation and a complex Hermitian Hamiltonian. It therefore detects transpose/conjugation mistakes that could remain hidden for purely real matrices. Trace preservation and Hermiticity preservation are checked on the same full operator basis.
+A separate direct matrix implementation evaluates $`-i[H,X]+\sum_\mu\mathcal D[J_\mu](X)`$ on all 16 matrix units and compares it with $`G\mathrm{vec}(X)`$. This check uses complex jumps obtained by a local phase rotation and a complex Hermitian Hamiltonian. It therefore detects transpose/conjugation mistakes that could remain hidden for purely real matrices. Trace preservation and Hermiticity preservation are checked on the same full operator basis.
 
 ### Pure reservoir
 

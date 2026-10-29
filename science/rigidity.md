@@ -74,7 +74,7 @@ x^2\le36K\epsilon^2.
 }
 ```
 
-**Adjoint estimate for Result R2.** For the adjoint generator, defined by $`\operatorname{Tr}[X\mathcal L(\rho)]=\operatorname{Tr}[\mathcal L^\dagger(X)\rho]`$, one also has
+**Adjoint estimate for Result R2.** For the adjoint generator, defined by $`\mathrm{Tr}[X\mathcal L(\rho)]=\mathrm{Tr}[\mathcal L^\dagger(X)\rho]`$, one also has
 
 ```math
 \boxed{
@@ -104,7 +104,7 @@ Write
 \rho_*=\lambda P+R,
 \qquad R\ge0,
 \qquad RP=PR=0,
-\qquad \eta:=\operatorname{Tr}R=1-\lambda\le\epsilon.
+\qquad \eta:=\mathrm{Tr}R=1-\lambda\le\epsilon.
 ```
 
 Every eigenvalue of $`R`$ is at most its trace, so
@@ -248,7 +248,7 @@ This entails no restriction on the specified target: every maximally entangled v
 For any local-sum operator $`L=A\otimes I+I\otimes B`$, use the vectorization convention
 
 ```math
-\operatorname{vec}(C):=\sum_{i,j}C_{ij}|i\rangle_A\otimes|j\rangle_B.
+\mathrm{vec}(C):=\sum_{i,j}C_{ij}|i\rangle_A\otimes|j\rangle_B.
 ```
 
 Directly expanding the two actions gives
@@ -256,10 +256,10 @@ Directly expanding the two actions gives
 ```math
 \begin{aligned}
 L|\Phi\rangle
-&=\frac1{\sqrt d}\operatorname{vec}(A+B^{\mathsf T}),\\
+&=\frac1{\sqrt d}\mathrm{vec}(A+B^{\mathsf T}),\\
 L^\dagger|\Phi\rangle
-&=\frac1{\sqrt d}\operatorname{vec}(A^\dagger+\overline B)
-=\frac1{\sqrt d}\operatorname{vec}\!\left((A+B^{\mathsf T})^\dagger\right).
+&=\frac1{\sqrt d}\mathrm{vec}(A^\dagger+\overline B)
+=\frac1{\sqrt d}\mathrm{vec}\!\left((A+B^{\mathsf T})^\dagger\right).
 \end{aligned}
 ```
 
