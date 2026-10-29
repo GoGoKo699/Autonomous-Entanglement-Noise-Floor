@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "vectorization": {
+    "generator_shape": [
+      16,
+      16
+    ],
+    "matrix_units_checked": 16,
+    "complex_jumps_and_hamiltonian": true
+  },
+  "pure_cases": [
+    {
+      "design_error": 0.1,
+      "g": 1.0,
+      "gamma_b": 0.2630683123147018,
+      "beta_b": 2.7369316876852983,
+      "gamma_over_design_error": 2.630683123147018,
+      "survival_at_one_slow_time": 0.40699617246886755,
+      "zero_eigenvalues": 1
+    },
+    {
+      "design_error": 0.01,
+      "g": 1.0,
+      "gamma_b": 0.02663650106295903,
+      "beta_b": 2.973363498937041,
+      "gamma_over_design_error": 2.663650106295903,
+      "survival_at_one_slow_time": 0.3712048327441511,
+      "zero_eigenvalues": 1
+    },
+    {
+      "design_error": 0.001,
+      "g": 1.0,
+      "gamma_b": 0.0026663698427127117,
+      "beta_b": 2.9973336301572875,
+      "gamma_over_design_error": 2.6663698427127116,
+      "survival_at_one_slow_time": 0.36820699096660403,
+      "zero_eigenvalues": 1
+    },
+    {
+      "design_error": 0.0001,
+      "g": 1.0,
+      "gamma_b": 0.0002666637031768346,
+      "beta_b": 2.9997333362968233,
+      "gamma_over_design_error": 2.666637031768346,
+      "survival_at_one_slow_time": 0.36791214701711883,
+      "zero_eigenvalues": 1
+    }
+  ],
+  "noisy_cases": [
+    {
+      "r": 0.01,
+      "g": 1.0,
+      "optimal_b": 0.8871886089281753,
+      "optimal_design_error": 0.05640569553591235,
+      "optimal_infidelity": 0.11139755353702338,
+      "infidelity_over_sqrt_r": 1.1139755353702336,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.5753993102724142,
+      "minimum_state_eigenvalue": 0.016566932678024008,
+      "zero_eigenvalues": 1
+    },
+    {
+      "r": 0.001,
+      "g": 1.0,
+      "optimal_b": 0.9622607056159829,
+      "optimal_design_error": 0.018869647192008565,
+      "optimal_infidelity": 0.03760932257188046,
+      "infidelity_over_sqrt_r": 1.1893112058312396,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.6819400371688387,
+      "minimum_state_eigenvalue": 0.006075245418980112,
+      "zero_eigenvalues": 1
+    },
+    {
+      "r": 0.0001,
+      "g": 1.0,
+      "optimal_b": 0.9878522647028982,
+      "optimal_design_error": 0.00607386764855089,
+      "optimal_infidelity": 0.012135080828949336,
+      "infidelity_over_sqrt_r": 1.2135080828949336,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.716159588879389,
+      "minimum_state_eigenvalue": 0.0020035749294332883,
+      "zero_eigenvalues": 1
+    },
+    {
+      "r": 1e-05,
+      "g": 1.0,
+      "optimal_b": 0.9961370077189068,
+      "optimal_design_error": 0.001931496140546607,
+      "optimal_infidelity": 0.0038617374258981887,
+      "infidelity_over_sqrt_r": 1.2211885991353983,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.7270214791126812,
+      "minimum_state_eigenvalue": 0.0006417417889389154,
+      "zero_eigenvalues": 1
+    },
+    {
+      "r": 1e-06,
+      "g": 1.0,
+      "optimal_b": 0.9987762548473442,
+      "optimal_design_error": 0.0006118725763278876,
+      "optimal_infidelity": 0.001223619999422371,
+      "infidelity_over_sqrt_r": 1.223619999422371,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.7304599983740758,
+      "minimum_state_eigenvalue": 0.00020374897165725809,
+      "zero_eigenvalues": 1
+    },
+    {
+      "r": 1e-08,
+      "g": 1.0,
+      "optimal_b": 0.9998775355125801,
+      "optimal_design_error": 6.123224370996327e-05,
+      "optimal_infidelity": 0.0001224632372667818,
+      "infidelity_over_sqrt_r": 1.224632372667818,
+      "infidelity_over_sqrt_kappa_over_Gamma": 1.7318917103479707,
+      "minimum_state_eigenvalue": 2.0408664348992023e-05,
+      "zero_eigenvalues": 1
+    }
+  ],
+  "rational_case": {
+    "u": "4/5",
+    "v": "3/5",
+    "g": "3/2",
+    "kappa": "1/80",
+    "r": "1/120",
+    "b": "24/25",
+    "p00": "10688/17825",
+    "p01_p10": "144/3565",
+    "p11": "5697/17825",
+    "coherence_00_11": "-7056/17825",
+    "even_block_determinant": "444096/12709225",
+    "infidelity": "5153/35650",
+    "trace": "1",
+    "full_matrix_stationarity_exact": true,
+    "fidelity_formula_exact": true
+  }
+}
