@@ -15,7 +15,7 @@ contains
 ```math
 J_0=\sqrt\kappa\, Z_A,
 \qquad Z_A=Z\otimes I,
-\qquad Z=Z^\dagger,\quad Z^2=I,\quad\operatorname{Tr}Z=0.
+\qquad Z=Z^\dagger,\quad Z^2=I,\quad\mathrm{Tr}Z=0.
 ```
 
 Such a $`Z`$ exists for qubits and for even local dimension. Let
@@ -83,8 +83,8 @@ $`C_A=C\otimes I`$, $`M=\|C\|_{\mathrm{op}}>0`$, and
 ```math
 \nu=\langle\Phi|C_A^\dagger C_A|\Phi\rangle
  -|\langle\Phi|C_A|\Phi\rangle|^2
-=\frac{\operatorname{Tr}(C^\dagger C)}{d}
- -\left|\frac{\operatorname{Tr}C}{d}\right|^2>0.
+=\frac{\mathrm{Tr}(C^\dagger C)}{d}
+ -\left|\frac{\mathrm{Tr}C}{d}\right|^2>0.
 ```
 
 The expectation of $`C_A^\dagger C_A`$ changes by at most
@@ -94,7 +94,7 @@ each expectation has magnitude at most $`M`$. Consequently
 
 ```math
 \begin{aligned}
-\operatorname{Var}_\psi(C_A)
+\mathrm{Var}_\psi(C_A)
 &:=\langle\psi|C_A^\dagger C_A|\psi\rangle
  -|\langle\psi|C_A|\psi\rangle|^2\\
 &\ge\nu-6M^2\sqrt\epsilon.
@@ -108,7 +108,7 @@ If
 \frac{\nu^2}{144M^4}\right\},
 ```
 
-then $`\operatorname{Var}_\psi(C_A)\ge\nu/2`$. It follows that
+then $`\mathrm{Var}_\psi(C_A)\ge\nu/2`$. It follows that
 
 ```math
 \epsilon\ge\sqrt{\frac{\kappa\nu}{72K}}.

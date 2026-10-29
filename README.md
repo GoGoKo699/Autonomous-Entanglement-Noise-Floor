@@ -102,6 +102,23 @@ The explicit sharp noise construction is two-qubit dephasing. The
 general-dimensional and other-noise statements in the scientific account
 are lower bounds with their stated hypotheses.
 
+## Learn the project
+
+The single educational anchor is **Ángel Rivas and Susana F. Huelga,
+*Open Quantum Systems: An Introduction* (2012)**. The
+[source-to-project bridge](learning/RIVAS_HUELGA_BRIDGE.md) uses the freely
+available [author preprint, version 2](https://arxiv.org/html/1104.5242v2),
+with that version's section numbering. It connects norms, completely
+positive maps, Lindblad generators and relaxation to the stationary-flow
+argument and the exact two-qubit example developed here.
+
+The [30-milestone understanding map](learning/MILESTONES.md) gives a common
+route through the prerequisites and the scientific narrative. Each
+milestone identifies its central question, understanding target,
+dependencies and precise source pointers. The bridge explains the steps
+between the textbook foundations and the project; the scientific files
+remain the authoritative statements and proofs.
+
 ## Reproduce the checks
 
 Using Python 3, install the pinned numerical dependencies and run:

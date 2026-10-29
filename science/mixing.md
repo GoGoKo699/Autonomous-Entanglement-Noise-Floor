@@ -93,15 +93,15 @@ Let $`\lambda`$ be the largest eigenvalue of $`\rho_*`$, and let $`P=|\psi\rangl
 \|\mathcal L^\dagger(P)\|_{\mathrm{op}}\le64K\epsilon.
 ```
 
-For any initial density operator $`\rho_0`$, set $`\rho_t:=\mathcal T_t(\rho_0)`$ and $`p(t):=\operatorname{Tr}(P\rho_t)`$. Finite-dimensional semigroup evolution is differentiable, so
+For any initial density operator $`\rho_0`$, set $`\rho_t:=\mathcal T_t(\rho_0)`$ and $`p(t):=\mathrm{Tr}(P\rho_t)`$. Finite-dimensional semigroup evolution is differentiable, so
 
 ```math
 \frac{d}{dt}p(t)
-=\operatorname{Tr}\!\left(P\mathcal L(\rho_t)\right)
-=\operatorname{Tr}\!\left(\mathcal L^\dagger(P)\rho_t\right).
+=\mathrm{Tr}\!\left(P\mathcal L(\rho_t)\right)
+=\mathrm{Tr}\!\left(\mathcal L^\dagger(P)\rho_t\right).
 ```
 
-For every Hermitian operator $`X`$ and density operator $`\rho`$, $`|\operatorname{Tr}(X\rho)|\le\|X\|_{\mathrm{op}}`$. Hence
+For every Hermitian operator $`X`$ and density operator $`\rho`$, $`|\mathrm{Tr}(X\rho)|\le\|X\|_{\mathrm{op}}`$. Hence
 
 ```math
 \left|\frac{d}{dt}p(t)\right|\le64K\epsilon
@@ -134,13 +134,13 @@ p(t)\le64K\epsilon\,t.
 The stationary expectation is
 
 ```math
-\operatorname{Tr}(P\rho_*)=\lambda.
+\mathrm{Tr}(P\rho_*)=\lambda.
 ```
 
 For two density operators, the difference in the probabilities of any measurement effect is bounded by their half trace distance. In particular,
 
 ```math
-|\operatorname{Tr}(P\rho_t)-\operatorname{Tr}(P\rho_*)|
+|\mathrm{Tr}(P\rho_t)-\mathrm{Tr}(P\rho_*)|
 \le D_{\mathrm{tr}}(\rho_t,\rho_*).
 ```
 

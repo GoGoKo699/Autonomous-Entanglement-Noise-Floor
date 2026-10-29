@@ -22,7 +22,7 @@ remainder,
 
 ```math
 \rho_* =\lambda|\psi\rangle\langle\psi|+R,
-\qquad \operatorname{Tr}R=\eta.
+\qquad \mathrm{Tr}R=\eta.
 ```
 
 High Bell fidelity implies both $`\eta\le\epsilon`$ and closeness of
