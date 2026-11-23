@@ -202,15 +202,11 @@ Suppose
 Let $`\lambda`$ be the largest eigenvalue, with normalized eigenvector $`|\psi\rangle`$. The variational principle gives $`\lambda\ge1-\epsilon`$. Decompose
 
 ```math
-\rho_*=\lambda P+R,
-\qquad P=|\psi\rangle\langle\psi|,
-\qquad Q=I-P,
-\qquad
-RP=0,
-\qquad
-0\le R\le\eta Q,
-\qquad
+\begin{aligned}
+\rho_*&=\lambda P+R,\qquad P=|\psi\rangle\langle\psi|,\qquad Q=I-P,\\
+RP&=0,\qquad 0\le R\le\eta Q,\qquad
 \eta=\mathrm{Tr}R=1-\lambda\le\epsilon.
+\end{aligned}
 ```
 
 Thus only $`\eta`$ of the stationary probability lies outside its leading eigendirection. The large separation between $`\lambda\ge15/16`$ and all other eigenvalues makes that direction unambiguous.
