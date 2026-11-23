@@ -28,7 +28,7 @@ Assume that the noise transfers population out of the target at a positive
 initial rate
 
 ```math
-\nu=\operatorname{Tr}[(I-P_0)\mathcal N(P_0)]
+\nu=\mathrm{Tr}[(I-P_0)\mathcal N(P_0)]
 =\sum_a\left(\langle\Phi|N_a^\dagger N_a|\Phi\rangle
    -|\langle\Phi|N_a|\Phi\rangle|^2\right)>0.
 ```
@@ -38,8 +38,8 @@ admitting the decomposition and budgets
 
 ```math
 J_\mu=L_\mu+E_\mu,\qquad L_\mu=A_\mu\otimes I+I\otimes B_\mu,\qquad
-\sum_\mu\|J_\mu\|_{\rm op}^2\le\Gamma,\qquad
-\sum_\mu\|E_\mu\|_{\rm op}^2\le\Gamma\delta^2 .
+\sum_\mu\|J_\mu\|_{\mathrm{op}}^2\le\Gamma,\qquad
+\sum_\mu\|E_\mu\|_{\mathrm{op}}^2\le\Gamma\delta^2 .
 ```
 
 Here $`\Gamma>0`$ and $`0\le\delta\le1`$. The budget on the
@@ -50,8 +50,8 @@ $`\kappa\mathcal N`$ independently of these two budgets. See the
 [model conventions](model.md) for the exact-local case and the earlier
 [noise floor](noise_floor.md) for compulsory local noise.
 
-Let $`\epsilon_{\rm opt}`$ be the infimum of
-$`1-\operatorname{Tr}(P_0\rho_*)`$ over allowed generators with a
+Let $`\epsilon_{\mathrm{opt}}`$ be the infimum of
+$`1-\mathrm{Tr}(P_0\rho_*)`$ over allowed generators with a
 unique stationary state to which every initial state converges. Put
 $`f=\kappa/\Gamma`$. There exist positive constants $`c,C,f_0`$,
 depending only on the fixed dimension and noise, such that for every
@@ -59,7 +59,7 @@ $`0<f\le f_0`$ and every $`\delta\in[0,1]`$,
 
 ```math
 c\min\!\left\{\sqrt f,\frac{f}{\delta^2}\right\}
-\;\le\;\epsilon_{\rm opt}
+\;\le\;\epsilon_{\mathrm{opt}}
 \;\le\;C\min\!\left\{\sqrt f,\frac{f}{\delta^2}\right\}.
 ```
 
@@ -71,7 +71,7 @@ fixed before taking the weak-noise limit.
 
 ## Converse from stationary population balance
 
-Write $`\epsilon=1-\operatorname{Tr}(P_0\rho_*)`$. For
+Write $`\epsilon=1-\mathrm{Tr}(P_0\rho_*)`$. For
 $`\epsilon\le1/16`$, the argument in
 [mixed-state rigidity](rigidity.md) gives a simple leading eigenvalue
 $`\lambda\ge1-\epsilon`$ and normalized eigenvector $`\psi`$
@@ -104,7 +104,7 @@ $`C_\mu-E_\mu`$. Comparing the two norms in the direct sum of all
 engineered jump outputs costs at most $`2\sqrt\Gamma\delta`$
 at $`\Phi`$. Moving from $`\Phi`$ to $`\psi`$ in each norm
 costs at most $`2\sqrt\Gamma\|\psi-\Phi\|`$, because
-$`\sum_\mu\|C_\mu\|_{\rm op}^2\le4\Gamma`$. Thus
+$`\sum_\mu\|C_\mu\|_{\mathrm{op}}^2\le4\Gamma`$. Thus
 
 ```math
 y_e\le x_e+B,\qquad
@@ -120,7 +120,7 @@ y_e^2\le \frac{2B^2+2r^2\kappa y_n^2}{(1-r)^2}
 \le \frac92 B^2+\frac12\kappa y_n^2 .
 ```
 
-Let $`K_N=\sum_a\|N_a\|_{\rm op}^2`$. Centered incoming noise
+Let $`K_N=\sum_a\|N_a\|_{\mathrm{op}}^2`$. Centered incoming noise
 strength satisfies $`y_n^2\le K_N`$. The trace-norm distance between
 the projectors of $`\psi`$ and $`\Phi`$ is at most
 $`2\sqrt\epsilon`$. Applying this to both terms defining each
@@ -180,7 +180,7 @@ $`s_b/s_a`$. The two nontrivial blocks each attain the stated norm.
 With
 
 ```math
-K(t)=\sum_{a\ne b}\|W_{ab}\|_{\rm op}^2=2d(d-1)+O(t^2),
+K(t)=\sum_{a\ne b}\|W_{ab}\|_{\mathrm{op}}^2=2d(d-1)+O(t^2),
 \qquad
 \mathcal A_t=\frac{1}{K(t)}\sum_{a\ne b}\mathcal D[W_{ab}],
 ```
@@ -223,7 +223,7 @@ that block. On this space the induced map $`\mathcal B_t`$ is
 The trace of this block obeys
 
 ```math
-\operatorname{Tr}\mathcal B_t(X)
+\mathrm{Tr}\mathcal B_t(X)
 =-\frac{1}{K(t)}\sum_{a\ne b} b_{ab}^\dagger Xb_{ab}.
 ```
 
@@ -259,8 +259,8 @@ The corresponding spectral projection $`\Pi_t`$ therefore has a
 bounded analytic continuation with
 
 ```math
-\Pi_0(X)=\left(\frac{Q_0}{d^2-1}-P_0\right)\operatorname{Tr}(Q_0X),
-\qquad \operatorname{Tr}X=0 .
+\Pi_0(X)=\left(\frac{Q_0}{d^2-1}-P_0\right)\mathrm{Tr}(Q_0X),
+\qquad \mathrm{Tr}X=0 .
 ```
 
 On this subspace the inverse is $`z(t)^{-1}\Pi_t+O(1)`$.
@@ -278,11 +278,11 @@ semigroup has a stationary density matrix, and negativity on the
 trace-zero subspace establishes uniqueness and convergence from every
 initial state.
 
-With $`\rho_*=P_t+X`$ and $`\operatorname{Tr}X=0`$, stationarity
+With $`\rho_*=P_t+X`$ and $`\mathrm{Tr}X=0`$, stationarity
 gives $`X=-f(\mathcal A_t+f\mathcal N)^{-1}\mathcal N(P_t)`$.
 Expanding the inverse about $`\mathcal A_t^{-1}`$ is controlled by
 $`f\|\mathcal A_t^{-1}\|=O(f/t^2)`$. The projection formula and
-$`\operatorname{Tr}(Q_0\mathcal N(P_0))=\nu`$ then give
+$`\mathrm{Tr}(Q_0\mathcal N(P_0))=\nu`$ then give
 
 ```math
 X=\frac{\nu f}{\beta_d t^2}
@@ -333,9 +333,9 @@ inverse on the trace-zero subspace. Its orthogonal population satisfies
 the exact evolution equation
 
 ```math
-\frac{d}{du}\operatorname{Tr}(Q_0\rho(u))
-=-\gamma\operatorname{Tr}(Q_0\rho(u))
- +\kappa\operatorname{Tr}(Q_0\mathcal N(\rho(u))) ,
+\frac{d}{du}\mathrm{Tr}(Q_0\rho(u))
+=-\gamma\mathrm{Tr}(Q_0\rho(u))
+ +\kappa\mathrm{Tr}(Q_0\mathcal N(\rho(u))) ,
 ```
 
 where $`u`$ denotes physical time. At stationarity this gives

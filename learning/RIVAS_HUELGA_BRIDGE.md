@@ -606,7 +606,7 @@ Increasing $`s`$ while keeping $`\gamma`$ fixed increases the resource. The fixe
 <a id="locality-crossover"></a>
 ## 11. A budget for departures from local-sum dynamics
 
-At fixed local dimension $`d`$ and for a fixed imposed generator $`\mathcal N`$ with jumps $`N_a`$, let $`\nu=\sum_a\operatorname{Var}_{\Phi}(N_a)>0`$ be its outgoing variance at the target. The physical noise is $`\kappa\mathcal N`$. Any Hamiltonian term in $`\mathcal N`$ contributes zero to this target population derivative. The engineered jumps admit a decomposition
+At fixed local dimension $`d`$ and for a fixed imposed generator $`\mathcal N`$ with jumps $`N_a`$, let $`\nu=\sum_a\mathrm{Var}_{\Phi}(N_a)>0`$ be its outgoing variance at the target. The physical noise is $`\kappa\mathcal N`$. Any Hamiltonian term in $`\mathcal N`$ contributes zero to this target population derivative. The engineered jumps admit a decomposition
 
 ```math
 J_\mu=A_\mu\otimes I+I\otimes B_\mu+E_\mu,
