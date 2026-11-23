@@ -1,6 +1,6 @@
 # From Rivas–Huelga to the autonomous entanglement noise floor
 
-This bridge connects the language of open quantum systems to the repository's central question: at fixed dissipative strength, how close can an autonomous two-qubit steady state remain to a Bell state when local dephasing is unavoidable? The answer developed here is a square-root error law. Its origin is a stationary population balance: near maximal entanglement, the permitted jumps have very little capacity to replenish the desired state.
+How accurately can an autonomous reservoir maintain maximal entanglement at fixed dissipative strength and with unavoidable noise? Stationary population balance explains the square-root error law when the engineered jumps are local sums. The locality crossover quantifies how much nonlocal dissipation is needed to improve that law.
 
 The educational anchor is **Ángel Rivas and Susana F. Huelga, _Open Quantum Systems: An Introduction_**, SpringerBriefs in Physics (2012), [book DOI](https://doi.org/10.1007/978-3-642-23354-8). All section, theorem, definition, and equation numbers attributed to the anchor below refer specifically to its freely available **[author preprint, arXiv:1104.5242v2, revised 9 February 2012](https://arxiv.org/abs/1104.5242v2)**: [HTML](https://arxiv.org/html/1104.5242v2) and [PDF](https://arxiv.org/pdf/1104.5242v2).
 
@@ -13,12 +13,12 @@ The educational anchor is **Ángel Rivas and Susana F. Huelga, _Open Quantum Sys
 | [§§2.1–2.3](https://arxiv.org/html/1104.5242v2) | Norms, exponentials, semigroups | [States and norms](#states-and-norms); [semigroups](#semigroups-and-adjoints) |
 | [Opening of §4; §§4.2–4.3](https://arxiv.org/html/1104.5242v2) | Reduced states, complete positivity, trace-norm contraction | [States and norms](#states-and-norms); [maps and adjoints](#semigroups-and-adjoints) |
 | [§5.2, especially Eq. (51)](https://arxiv.org/html/1104.5242v2) | Time-independent Lindblad generators | [Lindblad convention](#lindblad-and-gauge) |
-| [§5.4, Definition 5.3 and Theorem 5.4](https://arxiv.org/html/1104.5242v2) | Relaxation and its finite-dimensional spectral criterion | [Stationarity](#stationarity-and-relaxation); [mixing](#mixing-versus-gap) |
+| [§5.4, Definition 5.3 and Theorem 5.4](https://arxiv.org/html/1104.5242v2) | Relaxation and its finite-dimensional spectral criterion | [Stationarity](#stationarity-and-relaxation); [mixing](#mixing-versus-gap); [slow stationary response](#locality-crossover) |
 | [§6.4.1](https://arxiv.org/html/1104.5242v2) | Multipartite weak-coupling models | [Resource and model conventions](#resource-conventions) |
 
 The anchor supplies these foundations. The spectral population-balance identity is an inherited research ingredient from [Linowski, Rudnicki, and Gneiting, §III, Eqs. (31)–(33)](https://arxiv.org/html/2212.12245v2). The full-factor transpose identity and the pure-state obstruction connect to [Pocklington and Clerk, §III and Appendix A](https://arxiv.org/html/2404.03625v2). The worked reservoir is inherited from [Govia, Lingenfelter, and Clerk, Eqs. (8)–(9)](https://arxiv.org/html/2110.06201v2), also appearing in [Pocklington and Clerk, Eq. (7)](https://arxiv.org/html/2409.06012v2).
 
-The repository's derivations combine these ingredients to obtain quantitative bounds for mixed stationary states, an operational mixing bound with arbitrary Hamiltonian, and the noise floor with a matching two-qubit construction. The anchor is not being cited as a source for those results. The [related-work account](../references/RELATED_WORK.md) gives the detailed comparison; the [milestone map](MILESTONES.md) indexes the dependencies.
+The repository's derivations combine these ingredients to obtain quantitative bounds for mixed stationary states, an operational mixing bound with arbitrary Hamiltonian, and the noise floor with a matching two-qubit construction. The locality crossover extends the stationary comparison to fixed noise of positive target variance and engineered jumps with a charged nonlocal component. The [related-work account](../references/RELATED_WORK.md) gives the detailed comparison. The [milestone map](MILESTONES.md) indexes the dependencies.
 
 ## Notation and convention map
 
@@ -36,6 +36,7 @@ The repository's derivations combine these ingredients to obtain quantitative bo
 | Total strength | A rate must be tied to a specified representation | $`K=\sum_\mu\Vert J_\mu\Vert_{\mathrm{op}}^2`$ counts the supplied physical jumps |
 | Engine and noise | Separate physical channels | $`\Gamma`$ bounds engineered strength; $`\kappa\mathcal D[Z_A]`$ is compulsory noise |
 | Qubit example | Parameters belong to that family | $`g=\Gamma/2`$, $`r=\kappa/g`$, $`\delta_0`$ is its noiseless Bell error |
+| Locality crossover | A separate comparison of reservoirs | $`f=\kappa/\Gamma`$ is the noise ratio, $`\delta`$ the allowed relative nonlocal jump amplitude, and $`t`$ the Schmidt bias |
 
 All spaces in the project are finite dimensional. Set $`\hbar=1`$. Thus $`H`$, $`K`$, $`\Gamma`$, $`g`$, and $`\kappa`$ have units of inverse time, while jump operators have units of inverse square-root time.
 
@@ -602,6 +603,47 @@ Increasing $`s`$ while keeping $`\gamma`$ fixed increases the resource. The fixe
 
 **Keep the factors and controller fixed when applying the theorem.** Extra levels, an auxiliary system, retained history-dependent feedback, or scheduled control can change the mathematical model. Instantaneous Markovian feedback is still covered whenever its unconditional generator satisfies the stated premises. A Bell state in a computational subspace of a qutrit–qubit device is not maximally entangled across equal complete local factors. Such architectures have meaningful preparation mechanisms, but the full-factor transpose argument above does not automatically apply to them. The [physical interpretation](../science/interpretation.md) and [related-work comparison](../references/RELATED_WORK.md) identify the relevant distinctions.
 
+<a id="locality-crossover"></a>
+## 11. A budget for departures from local-sum dynamics
+
+At fixed local dimension $`d`$ and for a fixed imposed generator $`\mathcal N`$ with jumps $`N_a`$, let $`\nu=\sum_a\mathrm{Var}_{\Phi}(N_a)>0`$ be its outgoing variance at the target. The physical noise is $`\kappa\mathcal N`$. Any Hamiltonian term in $`\mathcal N`$ contributes zero to this target population derivative. The engineered jumps admit a decomposition
+
+```math
+J_\mu=A_\mu\otimes I+I\otimes B_\mu+E_\mu,
+\qquad \sum_\mu\|J_\mu\|_{\mathrm{op}}^2\le\Gamma,
+\qquad \sum_\mu\|E_\mu\|_{\mathrm{op}}^2\le\Gamma\delta^2.
+```
+
+The strength bound charges the actual engineered jumps. The defect bound charges the departure from the local-sum form in the same declared representation. The noise is supplied separately. Here $`\delta`$ measures a relative jump amplitude, and $`\delta^2`$ is the corresponding relative rate budget.
+
+### Stationary population balance with a nonlocal component
+
+Center the engineered and imposed jumps in the leading stationary eigenvector as in Sections 3–5. The diagonal matrix element of the stationary equation removes the Hamiltonian from the balance. The maximally entangled transpose identity still applies to the local-sum part, while the triangle inequality bounds the remaining forward–adjoint amplitude mismatch by $`2\sqrt\Gamma\,\delta`$. Moving between the leading vector and the target adds a term of order $`\sqrt{\Gamma\epsilon}`$. The small remainder weight then limits the engineered repair contribution to order $`\Gamma\epsilon(\epsilon+\delta^2)`$. For sufficiently small error, the net outgoing variance from the imposed noise remains of order $`\kappa\nu`$. Thus, for some constant $`C>0`$ depending on the fixed model,
+
+```math
+\kappa\nu\le C\Gamma\epsilon(\epsilon+\delta^2).
+```
+
+When $`\delta^2`$ is below the square-root noise scale, the term quadratic in error sets the lower bound. When the defect budget exceeds that scale, the term linear in error permits more repair per unit of residual population.
+
+### The local design and its slow stationary response
+
+Choose real weights $`h_a`$ with $`\sum_a h_a=0`$ and $`\sum_a h_a^2=d`$. For small bias $`t`$, take $`s_a=1+t h_a`$ and a normalized vector proportional to $`\sum_a s_a|aa\rangle`$. Its target infidelity is $`t^2/(1+t^2)`$. Using off-diagonal matrix units $`F_{ab}=|a\rangle\langle b|`$, the unscaled local-sum jumps are
+
+```math
+W_{ab}=F_{ab}\otimes I-(s_b/s_a)I\otimes F_{ba},\qquad a\ne b.
+```
+
+They annihilate the biased vector. A common rescaling spends exactly $`\Gamma`$ in squared jump norms. At zero bias there are two stationary sectors, generated by the target projector and its complementary projector. The other modes decay at rates bounded away from zero in units of $`\Gamma`$. A small bias opens a single slow population-transfer mode. In the basis that follows the target projector, the trace lost by the complementary block determines this mode's eigenvalue, $`-\Gamma\beta_d t^2+O(\Gamma t^3)`$, with $`\beta_d=4/[(d-1)(d^2-1)]`$.
+
+To turn this eigenvalue into a bound on the noisy stationary state, the proof controls its spectral projector and the inverse on the fast sector. The resulting inverse on trace-zero matrices has norm of order $`1/(\Gamma t^2)`$. When $`f=\kappa/\Gamma`$ satisfies $`f/t^2\ll1`$, the noisy stationary response is of order $`f/t^2`$. Positive target variance couples the imposed noise to the slow population mode. Balancing the design error $`t^2`$ against this response gives $`t\asymp f^{1/4}`$ and an error of order $`\sqrt f`$.
+
+### A reset within the nonlocal budget
+
+With a larger defect budget, jumps proportional to $`|\Phi\rangle\langle q_j|`$ return population from an orthonormal basis $`\{|q_j\rangle\}`$ of the complementary subspace. Sharing the rate budget $`\Gamma\delta^2`$ among the $`d^2-1`$ jumps bounds the population left there under imposed noise by order $`f/\delta^2`$. Both constructions give globally relaxing generators in their stated regimes.
+
+Together with the converse, Result R5 gives $`\epsilon_{\mathrm{opt}}=\Theta_{d,\mathcal N}(\min\{\sqrt f, f/\delta^2\})`$, uniformly in $`0\le\delta\le1`$ as $`f\to0`$. At $`\delta=0`$ the square-root branch applies. The crossover scale $`\delta\asymp f^{1/4}`$ compares a jump amplitude with the noise ratio. The [complete proof](../science/locality-crossover.md) supplies the stationary response and convergence estimates. The [operational mixing bound](#mixing-versus-gap) addresses worst-input dynamics in the strictly local-sum model.
+
 ## Specialist pointers
 
 | Question | Repository detail | Primary ingredient where applicable |
@@ -611,6 +653,6 @@ Increasing $`s`$ while keeping $`\gamma`$ fixed increases the resource. The fixe
 | How does local noise produce a universal bound? | [Noise floor](../science/noise_floor.md) | The mixed-state variance argument developed here |
 | Why is an unbounded Hamiltonian still constrained? | [Operational mixing](../science/mixing.md) | The centered offdiagonal stationarity equation |
 | Which noisy state and normalization attain the exponent? | [Exact reservoir](../science/attaining_reservoir.md) | [Govia et al., Eqs. (8)–(9)](https://arxiv.org/html/2110.06201v2); [Pocklington and Clerk, Eq. (7)](https://arxiv.org/html/2409.06012v2) |
+| How much nonlocal dissipative strength changes the error law? | [Locality crossover](../science/locality-crossover.md) | Stationary balance, the isolated slow mode, and the charged reset |
 | What is independently checked in the explicit family? | [Verification guide](../verification/README.md) | Matrix and population identities, not a replacement for the universal proof |
 | How do the foundations support the argument step by step? | [Milestone map](MILESTONES.md) | The single Rivas–Huelga anchor identified above |
-

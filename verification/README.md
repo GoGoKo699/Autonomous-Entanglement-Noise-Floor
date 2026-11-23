@@ -1,6 +1,6 @@
-# Verification of the attaining reservoir
+# Verification of the attaining reservoirs
 
-These deterministic checks compare the analytical two-qubit construction with its full $`16\times16`$ Lindblad generator. The written [reservoir derivation](../science/attaining_reservoir.md) supplies the arguments for arbitrary inputs and parameters. The scripts check conventions, algebraic formulas, and numerical consistency at the declared values.
+The two-qubit checks use its full $`16\times16`$ Lindblad generator. The crossover checks test both constructions in local dimensions two, three and four. The written [reservoir derivation](../science/attaining_reservoir.md) supplies the arguments for arbitrary inputs and parameters. The scripts check conventions, algebraic formulas, and numerical consistency at the declared values.
 
 ## Run
 
@@ -9,6 +9,7 @@ From the repository root, install the dependencies in the root requirements file
 ```bash
 python3 -m pip install -r requirements.txt
 python3 verification/verify_reservoir.py
+python3 verification/verify_locality_crossover.py
 ```
 
 The verifier prints a JSON report and exits nonzero if a check fails. To retain the full report locally:
@@ -26,6 +27,8 @@ The recorded reference run used Python 3.12.14, NumPy 2.3.5, and SciPy 1.17.0. N
 | [reservoir.py](reservoir.py) | Full generator, direct matrix action, state formulas, population solutions, and scalar optimizer |
 | [verify_reservoir.py](verify_reservoir.py) | Deterministic checks, tolerances, and JSON reporting |
 | [expected_results.json](expected_results.json) | Checked-in reference values for all parameter cases and the exact rational example |
+| [verify_locality_crossover.py](verify_locality_crossover.py) | Full-generator checks of both witnesses in the locality crossover |
+| [locality_crossover_results.json](locality_crossover_results.json) | Recorded strength, spectral and stationary response reference values |
 
 The expected output stores stable physical quantities, including population rates, the family optimizer, its infidelity, stationary-state eigenvalues, and exact fractions. Runtime versions and floating-point residuals appear in the generated report. Those residuals are bounded explicitly rather than required to match another machine's last bits.
 
@@ -105,3 +108,23 @@ It also checks unit trace, positive diagonal entries and even-block determinant,
 In the reference run, the largest column-vectorization discrepancy was $`4.45\times10^{-16}`$ or smaller. Pure stationary and population-identity residuals were below $`3\times10^{-16}`$, and the largest pure survival discrepancy was below $`1.27\times10^{-12}`$. Noisy stationary residuals were below $`3.20\times10^{-16}`$; the unconstrained stationary solve agreed with the exact state within $`5.17\times10^{-13}`$. The rational example had exactly zero stationary residual in every entry.
 
 The checks concern this explicitly specified family. The general variance, mixing, and noise-floor converses require their written proofs. Likewise, the arguments for faithfulness, uniqueness, convergence, and the asymptotic family optimum are analytical; finite samples corroborate their formulas and do not replace those arguments.
+
+
+## Locality crossover
+
+The [crossover verifier](verify_locality_crossover.py) constructs the
+entire generator for each witness of
+[Result R5](../science/locality-crossover.md), retaining all coherences.
+For each tested dimension it checks the declared jump norms, the dark
+state and slow eigenvalue of the tilted local-sum witness, and both decay
+rates of the noiseless reset. With additive local relaxation and nonlocal
+leakage it checks full stationary solves, the remaining spectrum,
+relaxation of a coherent input, and the predicted leading response. Reset
+examples include the scale $`\delta=f^{1/4}`$ and a fixed allowance.
+
+At $`f=10^{-10}`$ the ratio of computed infidelity to its leading term is
+within $`0.6\%`$ of unity in each tested local case and within $`0.02\%`$
+in each reset case. The largest stationary residual in the recorded run
+is $`1.28\times10^{-16}`$. Use `--report PATH` to retain the observed
+values and numerical residuals. The written proof establishes the
+stationary converse and uniformity in $`\delta`$ at each fixed dimension.

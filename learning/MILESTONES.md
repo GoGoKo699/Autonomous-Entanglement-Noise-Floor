@@ -1,10 +1,10 @@
 # Thirty milestones through the entanglement noise-floor argument
 
-This map follows the scientific structure of the project: the geometry of a high-fidelity stationary state, the restrictions imposed by local-sum dissipation, the resulting noise and mixing limits, and an explicit reservoir that attains the exponents.
+This map follows the geometry of a high-fidelity stationary state through the noise and mixing limits for local-sum dissipation. The last two milestones extend the stationary problem to a charged nonlocal component and derive where the optimal noise law changes.
 
 The single educational anchor is **Ángel Rivas and Susana F. Huelga, _Open Quantum Systems: An Introduction_**, [arXiv:1104.5242v2](https://arxiv.org/abs/1104.5242v2). The [Rivas–Huelga bridge](RIVAS_HUELGA_BRIDGE.md) connects its background material to the public science notes. The project's research antecedents have a different role: their identities, constructions, and scope are credited in [Related work](../references/RELATED_WORK.md).
 
-There are **12 foundation milestones and 18 milestones on the argument and its contributions**. The foundations give state geometry, quantum dynamical maps, stationary-state language, and representation-sensitive resource accounting enough room to remain distinct. The larger second part reflects the project's actual structure: two universal consequences, a separately analyzed attaining model, and a comparison that keeps global conclusions apart from properties of one family. The milestones are conceptual units, not equal-sized portions of a text. Dependencies refer only to earlier milestones; every unit also has a direct route into the scientific account.
+There are **12 foundation milestones and 18 milestones on the argument and its contributions**. The foundations cover state geometry, quantum dynamical maps, stationarity, and representation-sensitive resource accounting. The second part develops the mixed-state bounds, exact two-qubit example, and locality crossover. Dependencies refer only to earlier milestones. Every unit also has a direct route into the scientific account.
 
 ## Part I — Foundations and inherited structural tools
 
@@ -108,7 +108,7 @@ There are **12 foundation milestones and 18 milestones on the argument and its c
 
 **Dependencies:** [M03](#milestone-03), [M05](#milestone-05), [M06](#milestone-06), [M07](#milestone-07).
 
-**Conceptual connection:** The universal stationary converse needs none of these extra convergence properties. The attaining family must establish them to belong to the global optimization in R4.
+**Conceptual connection:** The stationary converses use stationarity alone. The attaining families establish relaxation to belong to the global optimizations in R4 and R5.
 
 **Pointers:** [Rigidity: theorem assumptions](../science/rigidity.md#theorem); [attaining reservoir: uniqueness and convergence](../science/attaining_reservoir.md#5-uniqueness-and-convergence-of-the-noisy-model); [bridge: stationarity and relaxation](RIVAS_HUELGA_BRIDGE.md#stationarity-and-relaxation).
 
@@ -121,9 +121,9 @@ There are **12 foundation milestones and 18 milestones on the argument and its c
 
 **Dependencies:** [M06](#milestone-06).
 
-**Conceptual connection:** An asymptotic improvement can disappear when all changing jump amplitudes are counted. The converse and the attaining construction must use the same fixed resource.
+**Conceptual connection:** An asymptotic improvement can disappear when all changing jump amplitudes are counted. The crossover adds a second constraint, $`\Gamma\delta^2`$, on the squared departure from a local-sum representation, within the same engineered budget.
 
-**Pointers:** [Model: resource convention](../science/model.md#1-dynamics-and-the-resource-convention); [interpretation: strength convention](../science/interpretation.md#3-why-the-strength-convention-changes-a-scaling-comparison); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions).
+**Pointers:** [Model: resource convention](../science/model.md#1-dynamics-and-the-resource-convention); [interpretation: strength convention](../science/interpretation.md#3-why-the-strength-convention-changes-a-scaling-comparison); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions); [bridge: locality crossover](RIVAS_HUELGA_BRIDGE.md#locality-crossover).
 
 <a id="milestone-10"></a>
 ### M10. Centering jumps without changing the dynamics
@@ -267,7 +267,7 @@ where $`x^2=\sum_\mu\|L_\mu\psi\|^2`$ and $`y^2=\sum_\mu\|L_\mu^\dagger\psi\|^2`
 
 **Dependencies:** [M04](#milestone-04), [M13](#milestone-13), [M16](#milestone-16), [M18](#milestone-18).
 
-**Conceptual connection:** A noise-rate label is insufficient without an operator normalization and nonzero target variance. This corollary is a lower bound; it does not import the qubit-dephasing sharpness claim into every other noise model.
+**Conceptual connection:** The operator normalization and target variance determine what a given noise rate means. The general crossover uses the sum of these variances for a fixed noise jump family and needs a separate attaining construction.
 
 **Pointers:** [Noise floor: general normalized variance bound](../science/noise_floor.md#2-a-normalized-variance-bound-for-other-local-noise); [interpretation: established scope](../science/interpretation.md#6-established-scope-and-open-quantitative-refinements); [bridge: noise floor](RIVAS_HUELGA_BRIDGE.md#noise-floor).
 
@@ -396,27 +396,27 @@ Its unique interior minimum balances the pure design error against noise sensiti
 **Pointers:** [Model: Result R4](../science/model.md#4-compulsory-dephasing-and-optimal-bell-error); [attaining reservoir: other targets](../science/attaining_reservoir.md#other-maximally-entangled-two-qubit-targets); [bridge: noise floor](RIVAS_HUELGA_BRIDGE.md#noise-floor); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions).
 
 <a id="milestone-29"></a>
-### M29. Known escapes and the effective-model boundary
+### M29. Stationary balance with a charged nonlocal component
 
-**Central question:** Which architectural changes can evade the result, and which apparently different implementations still satisfy it?
+**Central question:** How does a bounded departure from local-sum dissipation change the amount of stationary repair available near maximal entanglement?
 
-**Understanding target:** Added levels with a subspace Bell target, retained memories, scheduled time dependence, jumps outside the local-sum form, and an increasing actual budget change specific premises. The Brown qutrit–qubit construction and Pocklington–Clerk adaptive alternatives are established escapes. Instantaneous feedback remains covered when its unconditional generator has the declared form. Microscopic local coupling alone does not guarantee local-sum jumps after eliminating an interacting system.
+**Understanding target:** The actual engineered jumps have strength at most $`\Gamma`$. Their nonlocal remainders have total squared operator norm at most $`\Gamma\delta^2`$. The total imposed noise is $`\kappa\mathcal N`$, with fixed $`\mathcal N`$ and positive outgoing variance $`\nu`$ at the target. The maximally entangled transpose identity gives equal local-sum forward and adjoint strengths at the target. The remainders add a mismatch of order $`\sqrt\Gamma\,\delta`$ in amplitude. Spectral stationarity still weights repair by the small population outside the leading eigenvector, giving $`\kappa\nu\le C\Gamma\epsilon(\epsilon+\delta^2)`$ for sufficiently small $`\epsilon`$.
 
-**Dependencies:** [M01](#milestone-01), [M02](#milestone-02), [M05](#milestone-05), [M06](#milestone-06), [M09](#milestone-09), [M12](#milestone-12), [M18](#milestone-18), [M22](#milestone-22), [M28](#milestone-28).
+**Dependencies:** [M09](#milestone-09), [M12](#milestone-12), [M14](#milestone-14), [M15](#milestone-15), [M19](#milestone-19).
 
-**Conceptual connection:** A useful physical limitation identifies the resource or assumption that must change. The theorem constrains a precise autonomous architecture, rather than every device described as a local bath or an entanglement stabilizer.
+**Conceptual connection:** The converse identifies the extra repair available under an explicit physical budget. Applying it to a device requires checking the effective jump operators across the chosen complete factors. Subspace encoding, auxiliary systems, and time-dependent control can change those premises.
 
-**Pointers:** [Interpretation: architectures and premises](../science/interpretation.md#4-architectures-and-tasks-that-change-the-premises); [added-level attribution](../references/RELATED_WORK.md#brown2022); [adaptive alternatives](../references/RELATED_WORK.md#pocklington2025); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions).
+**Pointers:** [Converse from stationary balance](../science/locality-crossover.md#converse-from-stationary-population-balance); [bridge: locality crossover](RIVAS_HUELGA_BRIDGE.md#locality-crossover); [interpretation: architectures and premises](../science/interpretation.md#4-architectures-and-tasks-that-change-the-premises); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions).
 
 <a id="milestone-30"></a>
-### M30. The complete claim and its attribution
+### M30. R5 and the optimal noise crossover
 
-**Central question:** What precisely does the combined argument establish beyond its inherited ingredients?
+**Central question:** Which two constructions attain the stationary bound, and where does the preferable design change?
 
-**Understanding target:** The central chain is mixed-state rigidity R1, a direct stationary noise converse R3, an operational mixing obstruction R2, and the sharp qubit exponent R4. Spectral flux, the full-space transpose identity, and the squeezed-pair family are credited separately. The global prefactor, a general spectral-gap law, universal sharpness for every noise operator, and a quantitative fit to moderate-fidelity experiments are not supplied by this chain.
+**Understanding target:** A local-sum reservoir biased by $`t`$ has target error of order $`t^2`$. At zero bias the target and complementary populations are stationary. At small bias the complementary block loses trace through one slow mode with decay rate of order $`\Gamma t^2`$. The bounded slow projector and stable fast sector give a stationary noise response of order $`f/t^2`$, where $`f=\kappa/\Gamma`$. Balancing both terms gives the local order $`\sqrt f`$. A reset from the orthogonal complement uses engineered strength $`\Gamma\delta^2`$ and gives error of order $`f/\delta^2`$. With M29 these establish the minimum of the two orders uniformly in $`0\le\delta\le1`$ at fixed local dimension and imposed generator, with crossover $`\delta\asymp f^{1/4}`$. The local branch includes $`\delta=0`$.
 
-**Dependencies:** [M16](#milestone-16), [M18](#milestone-18), [M19](#milestone-19), [M22](#milestone-22), [M24](#milestone-24), [M28](#milestone-28), [M29](#milestone-29).
+**Dependencies:** [M08](#milestone-08), [M19](#milestone-19), [M22](#milestone-22), [M24](#milestone-24), [M28](#milestone-28), [M29](#milestone-29).
 
-**Conceptual connection:** The contribution is the uniform mixed-state restriction and its consequences under one consistent resource convention. The explicit family makes the exponents attainable; the model boundaries explain the physical choices that can alter them.
+**Conceptual connection:** The stationary response uses an isolated mode of a specified reservoir and its projection of the noise. R2's operational mixing bound follows from a state-independent speed estimate. Spectral balance, dark jumps, and reset constructions enter as inherited ingredients whose roles are detailed in the related-work account.
 
-**Pointers:** [Model: quantitative rigidity and mixing](../science/model.md#3-quantitative-mixed-state-rigidity); [model: noisy optimum](../science/model.md#4-compulsory-dephasing-and-optimal-bell-error); [contribution and source map](../references/RELATED_WORK.md#contribution-and-source-map); [established scope](../science/interpretation.md#6-established-scope-and-open-quantitative-refinements); [bridge: mixed-state rigidity](RIVAS_HUELGA_BRIDGE.md#mixed-state-rigidity); [bridge: resource conventions](RIVAS_HUELGA_BRIDGE.md#resource-conventions).
+**Pointers:** [Slow eigenvalue and noise response](../science/locality-crossover.md#slow-eigenvalue-and-its-noise-response); [locality crossover](../science/locality-crossover.md); [bridge: locality crossover](RIVAS_HUELGA_BRIDGE.md#locality-crossover); [bridge: mixing versus gap](RIVAS_HUELGA_BRIDGE.md#mixing-versus-gap); [contribution and source map](../references/RELATED_WORK.md#contribution-and-source-map).
