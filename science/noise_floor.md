@@ -117,8 +117,9 @@ then $`\mathrm{Var}_\psi(C_A)\ge\nu/2`$. It follows that
 With engineered budget $`\Gamma`$ and only this additional noise channel,
 $`K\le\Gamma+\kappa M^2`$. For a fixed noise operator with $`\nu>0`$,
 the result supplies a square-root lower order in the small-noise,
-high-fidelity limit. It does not prove that every such noise model admits a
-matching construction. The explicit sharp R4 concerns qubit dephasing.
+high-fidelity limit. The [general crossover construction](locality-crossover.md)
+attains that order for each fixed such noise operator and local dimension.
+The exact solution in R4 concerns qubit dephasing.
 
 For example, a qubit lowering operator has $`M=1`$ and $`\nu=1/2`$ on a
 Bell target, so the lower-order argument also applies to additive local

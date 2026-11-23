@@ -1,14 +1,18 @@
 # Autonomous Entanglement Noise Floor
 
 This repository studies the stationary fidelity and operational mixing limits
-of fixed Markovian entanglement stabilization with local-sum jump operators.
+of fixed Markovian entanglement stabilization with exact or approximately
+local-sum engineered jump operators.
 The complete scientific account is organized by topic under science/.
 
 Canonical entrypoints:
-- README.md: physical question, sharp qubit noise law, scientific reading
+- README.md: physical question, locality crossover, sharp qubit noise law, reading
   routes, assumptions, reproduction command and purpose/contact.
 - science/model.md: authoritative generator, fidelity, strength and mixing
-  conventions; exact statements R1--R4 and their domains.
+  conventions; exact statements R1--R5 and their domains.
+- science/locality-crossover.md: uniform stationary infidelity law at
+  fixed dimension and fixed variance-positive additive GKSL noise, proof by
+  stationary balance, tilted local-sum construction and weak nonlocal reset.
 - science/rigidity.md: dominant-eigenvector control, explicit jump-centering
   gauge, inherited spectral balance and maximally entangled transpose identity,
   quadratic outgoing variance, arbitrary-H block control and adjoint bound.
@@ -31,11 +35,14 @@ Canonical entrypoints:
 - learning/MILESTONES.md: exactly 30 common, project-defined understanding
   milestones, ordered from foundations to the complete scientific narrative.
 - verification/README.md: actual finite checks, commands and their limits.
-- verification/verify_reservoir.py: reproducible verification entrypoint.
+- verification/verify_reservoir.py: exact two-qubit verification entrypoint.
+- verification/verify_locality_crossover.py: finite spectral, budget and
+  stationary response checks for both R5 witnesses.
 
 Reader routes:
 - To understand the physical result, read model.md, noise_floor.md and
-  interpretation.md; use the exact reservoir as a worked example.
+  interpretation.md; read locality-crossover.md for the general result
+  and the exact two-qubit reservoir for the closed-form example.
 - To inspect the universal proof, read model.md and rigidity.md, then the
   noise-floor or mixing consequence. Use the full proof and source attribution.
 - To inspect attainability, read attaining_reservoir.md and the verification
@@ -60,8 +67,11 @@ Essential distinctions:
 - R1 and R2 apply to complete equal local factors in any finite d>=2.
 - R3's traceless-unitary dephasing version requires even d; its explicit
   sharp attaining example and R4 optimize two-qubit Bell stabilization.
-- The target-variance corollary for other noise is a lower bound. Matching
-  performance for every such operator is not claimed.
+- R5 allows fixed additive noise with positive target variance, on full
+  equal dimensions fixed before the weak-noise limit. Its physical budget
+  is Gamma for engineered squared jump norms and Gamma delta^2 for their
+  nonlocal remainders. With f=kappa/Gamma, the optimal order is the smaller
+  of sqrt(f) and f/delta^2, uniformly in delta. Use sqrt(f) when delta=0.
 - The optimized squeezed-family coefficient sqrt(3) is not established as
   the global optimum. The global result is the square-root order.
 - The mixing accuracy 1/4 is half trace distance to the actual stationary

@@ -11,7 +11,13 @@ and an otherwise unrestricted Hamiltonian. The target is maximally entangled acr
 
 The contribution developed here is a uniform robustness bound for a possibly mixed stationary state. If its target infidelity is $`\epsilon`$, the total centered outgoing jump variance of its leading eigenvector is $`O(K\epsilon^2)`$. Compulsory local noise with nonzero variance at the target therefore produces an infidelity floor of order $`\sqrt{\kappa/K}`$. For the explicit independent qubit-dephasing model, a known two-qubit reservoir attains this order. A separate stationary-block argument bounds the rate of change of a rank-one observable and gives an operational mixing-time lower bound without imposing a Hamiltonian norm limit.
 
-The spectral balance identity, the maximally entangled transpose identity, the pure-state slowdown mechanism, and the attaining reservoir all have antecedents below. The claimed addition is the uniform mixed-state optimization and its consequences. It does not rest on inventing a new reservoir or on an informal estimate of noise rate multiplied by inverse spectral gap.
+The [locality crossover](../science/locality-crossover.md) extends the stationary
+optimization to engineered jumps with a budgeted nonlocal component. The
+converse allows mixed stationary states and fixed additive noise with
+positive target variance. The upper bound uses a slow-mode analysis of a
+local-sum reservoir and a weak pure-target reset that spends the nonlocal
+budget. Spectral balance, the transpose identity, the dark-jump
+prescription and pure-target reset are established ingredients.
 
 ## Contribution and source map
 
@@ -19,6 +25,8 @@ The spectral balance identity, the maximally entangled transpose identity, the p
 |---|---|---|
 | Stationarity in an eigenbasis; population flux balance | [Linowski, Rudnicki and Gneiting](#linowski2023), Proposition 1 and Eqs. (31)–(33) | Inherited identity |
 | Local-sum jumps, full-space maximal entanglement, and pure-state dynamical isolation | [Pocklington and Clerk, 2024](#pocklington2024), Secs. II–III | Inherited structural mechanism |
+| Modular dark jumps for a pure state | [Pocklington and Clerk, 2024](#pocklington2024), Eq. (24) and Appendix B.2 | Dark-jump prescription for the local-sum witness |
+| Dissipative preparation of a prescribed pure target | [Kraus et al.](#kraus2008), Sec. II | General reset construction used at a budgeted rate |
 | Squeezed-pair two-qubit reservoir | [Govia, Lingenfelter and Clerk](#govia2022), Eqs. (8)–(9); [Pocklington and Clerk, 2025](#pocklington2025), Eq. (7) | Inherited family used for sharpness |
 | Fidelity limits with a prescribed coherent-control variance | [O'Connor, Ma and Genoni](#oconnor2025), Sec. II.2 | Different resource assumption |
 | Added levels and retained adaptive memory | [Brown et al.](#brown2022); [Pocklington and Clerk, 2025](#pocklington2025) | Established ways to change the architecture |
@@ -44,7 +52,33 @@ Sections II–III treat the same local-sum jump structure with arbitrary Hamilto
 
 A mixed stationary state need not satisfy the individual dark-state conditions. The present argument replaces them by spectral flux balance and controls the leading eigenvector uniformly. It also establishes an observable-based mixing bound rather than inferring a general spectral-gap bound from it.
 
-Appendix A.5 discusses unequal local dimensions. Appendix F's microscopic derivation assumes a noninteracting system Hamiltonian before frequency decomposition. Microscopic local bath couplings alone therefore do not establish the required jump form for arbitrary dressed, interacting systems.
+Equation (24) prescribes paired local terms for a full-Schmidt-rank dark
+state. Appendix B.2 computes the incoming strength and the initial fidelity
+rate for Haar-random inputs. The off-diagonal matrix-unit choice in R5
+instead allows an explicit isolated slow mode and a controlled stationary
+response to imposed noise.
+
+Appendix A.5 gives an additional squared return-channel contribution from
+unused levels when the local dimensions differ. R5 retains equal full
+factors and budgets the nonlocal parts of the effective engineered jumps.
+It determines the resulting mixed-state noise penalty over all allowed
+generators. Appendix F's microscopic derivation assumes a noninteracting
+system Hamiltonian before frequency decomposition. An interacting
+microscopic device needs its own effective-jump derivation.
+
+<a id="kraus2008"></a>
+## Pure-target dissipative reset
+
+**B. Kraus, H. P. Büchler, S. Diehl, A. Kantian, A. Micheli and P. Zoller,
+“Preparation of entangled states by quantum Markov processes,” Physical
+Review A 78, 042307 (2008).** [Published article](https://doi.org/10.1103/PhysRevA.78.042307)
+· [Primary preprint](https://arxiv.org/abs/0803.1463).
+
+Their construction establishes dissipative preparation of a prescribed
+multipartite pure state. The nonlocal witness in R5 uses rank-one
+transitions taking every orthogonal basis state to the target. The budget
+fixes their rate, and the exact population equation gives the stationary
+response to the imposed noise.
 
 <a id="govia2022"></a>
 ## The inherited squeezed-pair reservoir

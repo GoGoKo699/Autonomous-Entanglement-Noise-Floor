@@ -139,7 +139,7 @@ does not satisfy the full-space premise.
 | A qutrit–qubit system with a Bell target in a two-level subspace | The full local dimensions differ, and the qutrit marginal is not $`I_3/3`$. The equal-full-factor premise fails. |
 | Retained auxiliary qubits, cavities or memory, with Bell fidelity measured only on a reduced target pair | The reduced target pair need not obey a closed, time-independent Markovian generator of the specified form. |
 | Retained, history-dependent records or scheduled switching of generators | The allowed dynamics include memory or time dependence beyond the fixed generator. Instantaneous feedback whose unconditional dynamics still has the stated form remains covered. |
-| Jump operators outside $`A\otimes I+I\otimes B`$ | The forward/backward norm identity that drives the converse need not hold. |
+| Jump operators with a bounded departure from $`A\otimes I+I\otimes B`$ | The [crossover theorem](locality-crossover.md) charges that departure in squared operator norm. |
 | Increasing the actual jump-norm budget while approaching maximal entanglement | The fixed-budget optimization has been changed. |
 
 These boundaries have concrete precedents. The qutrit–qubit stabilization
@@ -155,6 +155,30 @@ uses a bare system Hamiltonian of the form $`H_A+H_B`$. Secular decomposition
 with interacting energy eigenstates can produce dressed jumps outside the
 local-sum class. This observation is compatible with allowing arbitrary
 $`H`$ inside a generator that already satisfies the operator contract.
+
+### How much nonlocality matters?
+
+Write $`f=\kappa/\Gamma`$. With a nonlocal squared-norm budget
+$`\Gamma\delta^2`$, the converse bounds the infidelity by comparing
+noise outflow with a repair rate of order
+$`\Gamma\epsilon(\epsilon+\delta^2)`$. The factor $`\epsilon`$ measures
+how little stationary population is available outside the leading state.
+Local-sum geometry contributes the second factor $`\epsilon`$.
+A controlled nonlocal component increases the repair rate by order
+$`\Gamma\epsilon\delta^2`$.
+
+| Nonlocal amplitude allowance | Optimal stationary infidelity | An attaining mechanism |
+|---|---|---|
+| $`0\le\delta\lesssim f^{1/4}`$ | $`\Theta(\sqrt f)`$ | Slightly tilt the dark state to produce a local-sum repair channel |
+| $`f^{1/4}\lesssim\delta\le1`$ | $`\Theta(f/\delta^2)`$ | Reset the orthogonal complement into the target using the nonlocal budget |
+
+At a fixed nonzero allowance, the optimal error is linear in the noise
+rate. This also specifies how close to local-sum the effective jumps must
+be for the square-root limit to persist as noise is reduced.
+The [proof](locality-crossover.md) treats fixed dimension, fixed additive
+noise with positive target variance, and an allowance that may shrink
+with the noise. Converting an experimental coupling into this allowance
+requires an effective-generator calculation for that device.
 
 ## 5. Relation to experiments and to the pure-state tradeoff
 
@@ -185,11 +209,10 @@ dephasing error. It does not determine the best global prefactor: the
 converse constants are conservative, while $`\sqrt3`$ is the leading
 coefficient achieved by the explicit family at fixed $`\Gamma`$.
 
-The general-dimension theorem supplies lower bounds near full maximal
-entanglement. The matching construction used for the headline law is
-two-qubit. A fixed local noise operator with nonzero target variance also
-gives a lower bound, but a universal classification of attaining protocols
-for every noise operator is not established.
+The general-dimension crossover establishes matching orders for each
+fixed equal local dimension and fixed variance-positive additive noise.
+Uniform constants as dimension grows, and the best numerical coefficient
+for each fixed noise model, remain open.
 
 The mixing theorem concerns fixed half-trace-distance accuracy and worst
 initial state. A spectral-gap estimate, a complete finite-time target-fidelity

@@ -7,12 +7,12 @@ independent local noise process remains present. Coherent control, reservoir
 design and the stationary state are all allowed to vary here; the total
 engineered dissipative strength is fixed.
 
-The main result is a square-root law for the smallest stationary Bell-state
-error under compulsory local dephasing. It follows from a quantitative
-restriction on the noise variance of any stationary state close to full
-maximal entanglement. A separate consequence bounds the time needed to mix
-uniformly over initial states. The [attaining reservoir](attaining_reservoir.md)
-makes both resource scalings explicit.
+Strict local-sum jumps give a square-root law for stationary Bell error
+under compulsory dephasing. The [locality crossover](locality-crossover.md)
+shows how that law changes when the engineered jump operators include
+a budgeted nonlocal component. A separate consequence bounds worst-input
+mixing under strict local-sum jumps. The [two-qubit example](attaining_reservoir.md)
+gives an exact stationary state and noiseless mixing dynamics.
 
 ## 1. Dynamics and the resource convention
 
@@ -166,9 +166,9 @@ An unconditional version is
 
 The same lower bound holds for even local dimension when the compulsory
 local operator is a traceless Hermitian unitary. General local noise with
-specified nonzero target variance has a related one-sided bound in
-[noise_floor.md](noise_floor.md); a matching upper law for every such noise
-operator is not asserted.
+specified nonzero target variance has an explicit lower bound in
+[noise_floor.md](noise_floor.md). Result R5 gives the matching order for
+fixed variance-positive additive noise at every fixed local dimension.
 
 **Result R4: sharp qubit scaling.** For $`\Gamma>0`$ let
 $`\epsilon_{\mathrm{opt}}(\Gamma,\kappa)`$ be the infimum of stationary
@@ -195,10 +195,43 @@ coefficient is not determined here. The equality of orders in R4 concerns
 the same two-qubit target, noise convention and engineered budget on both
 sides.
 
-## 5. Reading and verification routes
+## 5. Locality crossover for fixed additive noise
+
+**Result R5: optimal stationary infidelity with approximately local-sum jumps.**
+Retain the full equal factors and arbitrary static Hamiltonian. Hold a
+noise generator $`\mathcal N`$ fixed with
+$`\nu=\mathrm{Tr}[(I-P_0)\mathcal N(P_0)]>0`$, where
+$`P_0=|\Phi\rangle\langle\Phi|`$. Its contribution is $`\kappa\mathcal N`$.
+Write the engineered jumps as
+
+```math
+J_\mu=A_\mu\otimes I+I\otimes B_\mu+E_\mu,\quad
+\sum_\mu\|J_\mu\|_{\mathrm{op}}^2\le\Gamma,\quad
+\sum_\mu\|E_\mu\|_{\mathrm{op}}^2\le\Gamma\delta^2.
+```
+
+Let $`f=\kappa/\Gamma`$ with $`\Gamma>0`$. For all sufficiently
+small $`f>0`$, uniformly in $`\delta\in[0,1]`$, the optimum over
+globally relaxing generators obeys
+
+```math
+\epsilon_{\mathrm{opt}}
+=\Theta_{d,\mathcal N}\!\left(\min\left\{\sqrt f,\frac f{\delta^2}\right\}\right).
+```
+
+Use the square-root branch alone at $`\delta=0`$. The lower bound allows
+every stationary state. Positive $`\nu`$ means that the additive noise
+has nonzero total jump variance at the target. The constants may depend on
+the fixed dimension and noise. The [proof and matching constructions](locality-crossover.md)
+give the precise assumptions and show that $`\delta\asymp f^{1/4}`$
+marks the crossover. R1 and R2 retain their strictly local-sum premises.
+
+<a id="5-reading-and-verification-routes"></a>
+## 6. Reading and verification routes
 
 | Question | Authoritative account |
 |---|---|
+| How does a budgeted nonlocal jump component change the infidelity law? | [Locality crossover](locality-crossover.md) |
 | Why does stationarity force quadratic outgoing variance? | [Mixed-state rigidity](rigidity.md) |
 | How does compulsory noise turn that estimate into a fidelity limit? | [Noise floor](noise_floor.md) |
 | Why can an arbitrarily strong Hamiltonian not make mixing arbitrarily fast? | [Operational mixing](mixing.md) |

@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "engineered_strength": 1.7,
+  "dimensions": {
+    "2": {
+      "local_gap_coefficient": 1.3333333333333333,
+      "biases": [
+        0.08,
+        0.04,
+        0.02
+      ],
+      "local_gap_over_asymptotic": [
+        0.9593855040892186,
+        0.989728009706145,
+        0.9974246631295753
+      ],
+      "noise_to_strength_ratios": [
+        1e-06,
+        1e-08,
+        1e-10
+      ],
+      "reset_defects_in_each_row": [
+        "f^(1/4)",
+        0.2
+      ],
+      "noise_cases": {
+        "local_relaxation": {
+          "variance_at_target": 0.4999999999999999,
+          "optimized_local_error_over_asymptotic": [
+            0.9766782202049524,
+            0.9923243052669682,
+            0.9975406949964335
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.9970112029567916,
+              0.9999250070372397
+            ],
+            [
+              0.999700112454774,
+              0.999999250700737
+            ],
+            [
+              0.9999700011490738,
+              1.0000000405604077
+            ]
+          ]
+        },
+        "nonlocal_leakage": {
+          "variance_at_target": 0.9999999999999996,
+          "optimized_local_error_over_asymptotic": [
+            1.0018718847881483,
+            1.000187597323486,
+            1.0000185738495333
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.997008973080813,
+              0.9999250056290185
+            ],
+            [
+              0.9997000899738402,
+              0.9999992503336291
+            ],
+            [
+              0.999970000911075,
+              1.0000000295074338
+            ]
+          ]
+        }
+      }
+    },
+    "3": {
+      "local_gap_coefficient": 0.25,
+      "biases": [
+        0.08,
+        0.04,
+        0.02
+      ],
+      "local_gap_over_asymptotic": [
+        0.954834420927528,
+        0.988478325729814,
+        0.9971049138268375
+      ],
+      "noise_to_strength_ratios": [
+        1e-06,
+        1e-08,
+        1e-10
+      ],
+      "reset_defects_in_each_row": [
+        "f^(1/4)",
+        0.2
+      ],
+      "noise_cases": {
+        "local_relaxation": {
+          "variance_at_target": 0.3333333333333334,
+          "optimized_local_error_over_asymptotic": [
+            0.9607022717935311,
+            0.987085370646718,
+            0.995863474245911
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.9920773785360207,
+              0.9998000488700594
+            ],
+            [
+              0.9992007813687722,
+              0.9999979995412631
+            ],
+            [
+              0.99992000781138,
+              0.9999999229516361
+            ]
+          ]
+        },
+        "nonlocal_leakage": {
+          "variance_at_target": 1.0,
+          "optimized_local_error_over_asymptotic": [
+            1.0029822686520085,
+            1.000299821539967,
+            1.0000301088647314
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.9920634920634486,
+              0.9998000399901976
+            ],
+            [
+              0.9992006394882823,
+              0.9999979998235893
+            ],
+            [
+              0.9999200063967706,
+              0.9999999647344341
+            ]
+          ]
+        }
+      }
+    },
+    "4": {
+      "local_gap_coefficient": 0.08888888888888889,
+      "biases": [
+        0.08,
+        0.04,
+        0.02
+      ],
+      "local_gap_over_asymptotic": [
+        0.9587872786798656,
+        0.989488464441034,
+        0.9973587212647211
+      ],
+      "noise_to_strength_ratios": [
+        1e-06,
+        1e-08,
+        1e-10
+      ],
+      "reset_defects_in_each_row": [
+        "f^(1/4)",
+        0.2
+      ],
+      "noise_cases": {
+        "local_relaxation": {
+          "variance_at_target": 0.25,
+          "optimized_local_error_over_asymptotic": [
+            0.9451451430347689,
+            0.9820109951970791,
+            0.9942417057383495
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.9852620211521846,
+              0.9996251669097008
+            ],
+            [
+              0.9985026666126059,
+              0.999996250013971
+            ],
+            [
+              0.9998500267131996,
+              0.9999999484378288
+            ]
+          ]
+        },
+        "nonlocal_leakage": {
+          "variance_at_target": 0.9999999999999998,
+          "optimized_local_error_over_asymptotic": [
+            1.0034024686120502,
+            1.0003434344294588,
+            1.0000342409056493
+          ],
+          "reset_error_over_asymptotic": [
+            [
+              0.9852216748768501,
+              0.9996251405720268
+            ],
+            [
+              0.9985022466300734,
+              0.9999962499918582
+            ],
+            [
+              0.9998500224963485,
+              0.9999999630551132
+            ]
+          ]
+        }
+      }
+    }
+  }
+}
